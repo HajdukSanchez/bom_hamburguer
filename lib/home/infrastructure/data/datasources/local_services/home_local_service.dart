@@ -20,15 +20,23 @@ class HomeLocalServiceImpl implements HomeLocalService {
         id: 1,
         name: 'Termo',
         price: 10,
-        image: '',
+        image:
+            'https://www.b2b.212global.com/web/image/product.product/210486/image_512?unique=ead0fb2',
         type: ProductType.main,
       );
 
       /// Simulate API call
       return Future.delayed(
-        const Duration(seconds: 3),
+        const Duration(seconds: 2),
         () => const CatalogDTO(
-          products: [product],
+          products: [
+            product,
+            product,
+            product,
+            product,
+            product,
+            product,
+          ],
           discounts: [
             DiscountRuleDTO(products: [product], discount: 15)
           ],

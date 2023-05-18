@@ -1,8 +1,10 @@
-import 'package:bom_hamburguer/counter/counter.dart';
+import 'package:bom_hamburguer/home/home.dart';
 import 'package:bom_hamburguer/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
+/// Application entry point
 class App extends StatelessWidget {
+  /// Constructor
   const App({super.key});
 
   @override
@@ -16,7 +18,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const HomeApp(),
     );
   }
 }
