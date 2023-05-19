@@ -14,7 +14,7 @@ void main() {
   setUp(() {
     remoteService = HomeLocalServiceMock();
 
-    repository = HomeRepositoryImpl();
+    repository = HomeRepositoryImpl(remoteService);
   });
 
   group('getCatalog', () {
