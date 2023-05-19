@@ -8,3 +8,5 @@ export 'package:bom_hamburguer/common/infrastructure/data/models/responses/produ
 export 'package:bom_hamburguer/common/infrastructure/data/models/responses/user_dto.dart';
 export 'package:bom_hamburguer/common/infrastructure/mapper/mapper_domain.dart';
 export 'package:bom_hamburguer/common/shared/constants.dart/constants.dart';
+export 'package:bom_hamburguer/common/shared/helpers/helpers.dart';
+export 'package:bom_hamburguer/common/shared/utils/string_utils.dart';

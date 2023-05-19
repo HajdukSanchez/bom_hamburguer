@@ -12,11 +12,11 @@ class CartButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // Navigate to cart page
     Future<void> showCart() async {
-      // await Navigator.of(context).push<void>(
-      //   MaterialPageRoute<void>(
-      //     builder: (BuildContext context) => const TODO,
-      //   ),
-      // );
+      await Navigator.of(context).push<void>(
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) => const CartPage(),
+        ),
+      );
     }
 
     return Stack(

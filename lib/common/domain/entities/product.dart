@@ -28,5 +28,5 @@ class Product with _$Product {
   const Product._();
 
   /// Formatted price of the product with $100.00 format
-  String get formattedPrice => '\$$price';
+  String get formattedPrice => StringUtils.getFormattedPrice(price);
 }

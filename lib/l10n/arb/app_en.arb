@@ -19,5 +19,21 @@
 		"cartProductAlreadyAdded": "Ups, the product is already in the cart",
 		"@cartProductAlreadyAdded": {
 			"description": "Text shown when user tries to add a product that is already in the cart"
+		},
+		"cartTotal": "Total",
+		"@cartTotal": {
+			"description": "Total value of the cart"
+		},
+		"cartCheckout": "Checkout",
+		"@cartCheckout": {
+			"description": "Checkout button text on the cart page"
+		},
+		"cartDiscountText1": "For buying: ",
+		"@cartDiscountText1": {
+			"description": "Initial text to show in the discount message"
+		},
+		"cartDiscountText2": "\nYou have a discount of ",
+		"@cartDiscountText2": {
+			"description": "Final text to show in the discount message"
 		}
 }

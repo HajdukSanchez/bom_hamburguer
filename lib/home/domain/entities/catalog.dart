@@ -41,4 +41,16 @@ class Catalog with _$Catalog {
         .where((product) => product.type == ProductType.addition)
         .toList();
   }
+
+  /// There is some discount rule valid to applied
+  bool areDiscountsAvailable(List<Product> products) {
+    return discounts.any((discount) => discount.discountRuleIsValid(products));
+  }
+
+  /// Get the first discount rule valid to be applied
+  DiscountRule getDiscountRule(List<Product> products) {
+    return discounts.firstWhere(
+      (discount) => discount.discountRuleIsValid(products),
+    );
+  }
 }

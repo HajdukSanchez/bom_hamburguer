@@ -17,4 +17,9 @@ class DiscountRule with _$DiscountRule {
 
   /// Empty constructor
   const DiscountRule._();
+
+  /// Discount rule is valid
+  bool discountRuleIsValid(List<Product> products) {
+    return products.every((product) => products.contains(product));
+  }
 }

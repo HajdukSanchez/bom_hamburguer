@@ -19,5 +19,21 @@
 		"cartProductAlreadyAdded": "Ups, el producto ya está en el carrito",
 		"@cartProductAlreadyAdded": {
 			"description": "Texto para mostrar cuando se intenta agregar un producto que ya está en el carrito"
+		},
+		"cartTotal": "Total",
+		"@cartTotal": {
+			"description": "Valor para mostrar como total del carrito"
+		},
+		"cartCheckout": "Finalizar compra",
+		"@cartCheckout": {
+			"description": "Texto para mostrar en el botón de finalizar compra"
+		},
+		"cartDiscountText1": "Por la compra de: ",
+		"@cartDiscountText1": {
+			"description": "Texto inicial para mostrar en el mensaje de descuento"
+		},
+		"cartDiscountText2": "\nObtienes un descuento del ",
+		"@cartDiscountText2": {
+			"description": "Texto final para mostrar en el mensaje de descuento"
 		}
 }

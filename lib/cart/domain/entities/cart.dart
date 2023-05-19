@@ -14,4 +14,14 @@ class Cart with _$Cart {
 
   /// Empty constructor
   const Cart._();
+
+  /// Get total amount of products
+  String get totalAmount {
+    final total = products.fold<double>(
+      0,
+      (prev, actual) => prev + actual.price,
+    );
+
+    return StringUtils.getFormattedPrice(total);
+  }
 }
