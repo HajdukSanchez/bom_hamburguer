@@ -1,4 +1,5 @@
 import 'package:bom_hamburguer/common/common.dart';
+import 'package:injectable/injectable.dart';
 
 /// Remote data source to handle Payment requests
 // ignore: one_member_abstracts
@@ -8,6 +9,7 @@ abstract class PaymentRemoteService {
 }
 
 /// Implementation of [PaymentRemoteService]
+@Injectable(as: PaymentRemoteService)
 class PaymentRemoteServiceImpl extends PaymentRemoteService {
   /// Constructor
   PaymentRemoteServiceImpl();

@@ -1,8 +1,10 @@
 import 'package:bom_hamburguer/common/common.dart';
 import 'package:bom_hamburguer/home/home.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 /// Implementation of the abstract repository class [HomeRepository]
+@Injectable(as: HomeRepository)
 class HomeRepositoryImpl implements HomeRepository {
   /// Constructor
   HomeRepositoryImpl(this._localService);

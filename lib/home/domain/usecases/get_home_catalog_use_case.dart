@@ -1,7 +1,9 @@
 import 'package:bom_hamburguer/home/home.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 /// Use case to get the home catalog
+@injectable
 class GetHomeCatalogUseCase {
   /// Constructor
   GetHomeCatalogUseCase(this._repository);

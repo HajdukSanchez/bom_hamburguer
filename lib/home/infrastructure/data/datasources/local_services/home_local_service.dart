@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:bom_hamburguer/common/common.dart';
 import 'package:bom_hamburguer/home/home.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:injectable/injectable.dart';
 
 /// Remote data source to handle Home requests
 // ignore: one_member_abstracts
@@ -11,6 +12,7 @@ abstract class HomeLocalService {
 }
 
 /// Implementation of [HomeLocalService]
+@Injectable(as: HomeLocalService)
 class HomeLocalServiceImpl extends HomeLocalService {
   /// Constructor
   HomeLocalServiceImpl(this._storage);
