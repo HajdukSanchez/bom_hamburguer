@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:bom_hamburguer/common/common.dart';
 import 'package:bom_hamburguer/home/home.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 /// Remote data source to handle Home requests
 // ignore: one_member_abstracts
@@ -8,48 +11,30 @@ abstract class HomeLocalService {
 }
 
 /// Implementation of [HomeLocalService]
-class HomeLocalServiceImpl implements HomeLocalService {
+class HomeLocalServiceImpl extends HomeLocalService {
   /// Constructor
-  HomeLocalServiceImpl();
+  HomeLocalServiceImpl(this._storage);
+
+  final FlutterSecureStorage _storage;
 
   @override
   Future<CatalogDTO> getLocalCatalog() async {
     try {
-      // TODO: ADD local storage implementation
-      const product = ProductDTO(
-        id: 1,
-        name: 'Termo',
-        price: 10,
-        image:
-            'https://www.b2b.212global.com/web/image/product.product/210486/image_512?unique=ead0fb2',
-        type: ProductType.main,
-      );
-      const product2 = ProductDTO(
-        id: 1,
-        name: 'Termo',
-        price: 10,
-        image:
-            'https://www.b2b.212global.com/web/image/product.product/210486/image_512?unique=ead0fb2',
-        type: ProductType.addition,
-      );
+      // Read value
+      final value = await _storage.read(key: HomeDataConst.catalogKey.value);
 
-      /// Simulate API call
-      return Future.delayed(
-        const Duration(seconds: 2),
-        () => const CatalogDTO(
-          products: [
-            product,
-            product,
-            product2,
-            product,
-            product,
-            product2,
-          ],
-          discounts: [
-            DiscountRuleDTO(products: [product], discount: 15)
-          ],
-        ),
-      );
+      if (value != null) {
+        final valueJson = jsonDecode(value);
+
+        return Future.delayed(
+          const Duration(seconds: 2),
+          () {
+            return CatalogDTO.fromJson(valueJson as Map<String, dynamic>);
+          },
+        );
+      }
+
+      throw CommonStorageFailure('Error reading catalog from storage');
     } catch (e) {
       throw CommonStorageFailure(e.toString());
     }

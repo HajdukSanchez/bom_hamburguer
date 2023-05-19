@@ -7,7 +7,7 @@ part 'payment_order_state.dart';
 part 'payment_order_bloc.freezed.dart';
 
 class PaymentOrderBloc extends Bloc<PaymentOrderEvent, PaymentOrderState> {
-  PaymentOrderBloc() : super(const _Initial()) {
+  PaymentOrderBloc(this._useCase) : super(const _Initial()) {
     on<PaymentOrderEvent>(
       (event, emit) => event.when(
         pay: (order) => _handlePayment(event, emit),
@@ -15,8 +15,7 @@ class PaymentOrderBloc extends Bloc<PaymentOrderEvent, PaymentOrderState> {
     );
   }
 
-  // TODO: ADD dependency Injection
-  final _useCase = PaymentUseCase();
+  final PaymentUseCase _useCase;
 
   // Get initial catalog data
   Future<void> _handlePayment(

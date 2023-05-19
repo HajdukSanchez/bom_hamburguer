@@ -4,9 +4,9 @@ import 'package:dartz/dartz.dart';
 /// Use case to get the home catalog
 class GetHomeCatalogUseCase {
   /// Constructor
-  GetHomeCatalogUseCase();
+  GetHomeCatalogUseCase(this._repository);
 
-  final _repository = HomeRepositoryImpl();
+  final HomeRepository _repository;
 
   /// Execution of the use case
   Future<Either<Exception, Catalog>> execute() async {

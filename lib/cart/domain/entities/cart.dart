@@ -10,6 +10,9 @@ class Cart with _$Cart {
   const factory Cart({
     /// List of products
     required List<Product> products,
+
+    /// Possible discount to apply
+    DiscountRule? discount,
   }) = _Cart;
 
   /// Empty constructor
@@ -17,11 +20,25 @@ class Cart with _$Cart {
 
   /// Get total amount of products
   String get totalAmount {
-    final total = products.fold<double>(
-      0,
-      (prev, actual) => prev + actual.price,
-    );
+    return StringUtils.getFormattedPrice(_getTotalPrice());
+  }
 
-    return StringUtils.getFormattedPrice(total);
+  /// Get total amount of products with discount
+  String get totalWithDiscount {
+    final total = _getTotalPrice();
+    if (discount != null) {
+      final totalDiscount = total - (total * (discount!.discount / 100));
+
+      return StringUtils.getFormattedPrice(totalDiscount);
+    }
+    return totalAmount;
+  }
+
+  /// Get total price value
+  double _getTotalPrice() {
+    return products.fold<double>(
+      0,
+      (prev, actual) => prev + actual.price.toInt(),
+    );
   }
 }

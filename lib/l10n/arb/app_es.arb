@@ -55,5 +55,9 @@
 		"checkoutButtonPay": "Realizar pago",
 		"@checkoutButtonPay": {
 			"description": "Texto para el botón de realizar pago"
+		},
+		"globalErrorMessage": "Ups, algo salió mal",
+		"@globalErrorMessage": {
+			"description": "Texto para mostrar cuando ocurre un error"
 		}
 }

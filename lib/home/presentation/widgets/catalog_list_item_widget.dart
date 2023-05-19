@@ -15,6 +15,8 @@ class CatalogListItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const imageBoxSize = 70.0;
+
     // Add product into the cart
     void addProduct() {
       context.read<CartBloc>().add(CartEvent.add(product: product));
@@ -29,8 +31,15 @@ class CatalogListItemWidget extends StatelessWidget {
           color: Colors.grey.shade300,
           borderRadius: BorderRadius.circular(8),
         ),
+        constraints: const BoxConstraints(
+          maxWidth: imageBoxSize,
+          maxHeight: imageBoxSize,
+          minHeight: imageBoxSize,
+          minWidth: imageBoxSize,
+        ),
         child: Image.network(
           product.image,
+          fit: BoxFit.cover,
           errorBuilder: (_, __, ___) => const Icon(Icons.error),
         ),
       ),

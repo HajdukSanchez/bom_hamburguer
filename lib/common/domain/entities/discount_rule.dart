@@ -18,8 +18,19 @@ class DiscountRule with _$DiscountRule {
   /// Empty constructor
   const DiscountRule._();
 
-  /// Discount rule is valid
-  bool discountRuleIsValid(List<Product> products) {
-    return products.every((product) => products.contains(product));
+  /// Discount rule is valid when all the products in the list
+  /// are in the products list passed as parameter
+  bool discountRuleIsValid(List<Product> data) {
+    // Not the exact amount of products
+    if (data.length < products.length) {
+      return false;
+    }
+
+    for (final product in products) {
+      if (!data.contains(product)) {
+        return false;
+      }
+    }
+    return true;
   }
 }

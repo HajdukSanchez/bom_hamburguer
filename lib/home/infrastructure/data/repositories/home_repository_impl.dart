@@ -5,11 +5,9 @@ import 'package:dartz/dartz.dart';
 /// Implementation of the abstract repository class [HomeRepository]
 class HomeRepositoryImpl implements HomeRepository {
   /// Constructor
-  HomeRepositoryImpl();
+  HomeRepositoryImpl(this._localService);
 
-  /// Get instance
-  // TODO: Add dependency injection
-  final _localService = HomeLocalServiceImpl();
+  final HomeLocalService _localService;
 
   @override
   Future<Either<Exception, Catalog>> getCatalog() async {

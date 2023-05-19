@@ -49,7 +49,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 Column(
                   children: [
                     Text(
-                      '${context.l10n.checkoutPay} ${cart.totalAmount}',
+                      '''${context.l10n.checkoutPay} ${cart.totalWithDiscount}''',
                       style: textTheme.headline3,
                     ),
                     const SizedBox(height: 24),

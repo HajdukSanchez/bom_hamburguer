@@ -13,6 +13,15 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
+    // Go to checkout page
+    Future<void> navigateToCheckout() async {
+      await Navigator.of(context).push<void>(
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) => const CheckOutPage(),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         leading: const BackButtonWidget(),
@@ -86,14 +95,7 @@ class CartPage extends StatelessWidget {
                   ),
                   ButtonWidget(
                     buttonText: context.l10n.cartCheckout,
-                    onTap: () async {
-                      await Navigator.of(context).push<void>(
-                        MaterialPageRoute<void>(
-                          builder: (BuildContext context) =>
-                              const CheckOutPage(),
-                        ),
-                      );
-                    },
+                    onTap: navigateToCheckout,
                   ),
                 ],
               ),

@@ -4,9 +4,9 @@ import 'package:dartz/dartz.dart';
 /// Use case for handle payment
 class PaymentUseCase {
   /// Constructor
-  PaymentUseCase();
+  PaymentUseCase(this._repository);
 
-  final _repository = PaymentRepositoryImpl();
+  final PaymentRepository _repository;
 
   Future<Either<Exception, bool>> execute() async {
     return _repository.makePayment();

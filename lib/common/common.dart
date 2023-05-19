@@ -11,4 +11,6 @@ export 'package:bom_hamburguer/common/presentation/widgets/back_button_widget.da
 export 'package:bom_hamburguer/common/presentation/widgets/button_widget.dart';
 export 'package:bom_hamburguer/common/shared/constants.dart/constants.dart';
 export 'package:bom_hamburguer/common/shared/helpers/helpers.dart';
+export 'package:bom_hamburguer/common/shared/injection/injection.dart';
+export 'package:bom_hamburguer/common/shared/utils/data_utils.dart';
 export 'package:bom_hamburguer/common/shared/utils/string_utils.dart';

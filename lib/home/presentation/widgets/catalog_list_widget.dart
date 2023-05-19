@@ -39,6 +39,14 @@ class _CatalogListWidgetState extends State<CatalogListWidget> {
       builder: (_, state) => state.maybeWhen(
         orElse: SizedBox.new,
         loading: CircularProgressIndicator.new,
+        error: (_) => GestureDetector(
+          onTap: _getCatalogData,
+          child: Text(
+            context.l10n.globalErrorMessage,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headline4,
+          ),
+        ),
         data: (data) => RefreshIndicator(
           onRefresh: () async => _getCatalogData(),
           child: ListView(

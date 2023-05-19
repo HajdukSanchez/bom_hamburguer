@@ -16,6 +16,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         event.when(
           add: (product) => _addNewProduct(event, emit, product: product),
           remove: (product) => _deleteProduct(event, emit, product: product),
+          addDiscount: (discount) =>
+              _addDiscount(event, emit, discount: discount),
         );
       },
     );
@@ -53,5 +55,16 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
     cart = cart.copyWith(products: newProducts);
     emit(CartState.cart(cart: cart, isError: false));
+  }
+
+  // Add discount to cart
+  Future<void> _addDiscount(
+    CartEvent event,
+    Emitter<CartState> emit, {
+    required DiscountRule discount,
+  }) async {
+    emit(
+      CartState.cart(cart: cart.copyWith(discount: discount), isError: false),
+    );
   }
 }

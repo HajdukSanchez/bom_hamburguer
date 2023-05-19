@@ -129,3 +129,4 @@ app.*.map.json
 # Flutter build
 **/**.freezed.dart
 **/**.g.dart
+**/injection.config.dart

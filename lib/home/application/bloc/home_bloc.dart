@@ -11,7 +11,7 @@ part 'home_bloc.freezed.dart';
 /// Like get initial catalog with products and discounts
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// Constructor
-  HomeBloc() : super(const _Initial()) {
+  HomeBloc(this._useCase) : super(const _Initial()) {
     /// Map events
     on<HomeEvent>(
       (event, emit) => event.when(
@@ -19,8 +19,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       ),
     );
   }
-  // TODO: ADD dependency Injection
-  final _useCase = GetHomeCatalogUseCase();
+  final GetHomeCatalogUseCase _useCase;
 
   // Get initial catalog data
   Future<void> _getCatalog(HomeEvent event, Emitter<HomeState> emit) async {

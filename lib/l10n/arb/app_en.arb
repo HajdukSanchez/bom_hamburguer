@@ -55,5 +55,9 @@
 		"checkoutButtonPay": "Pay",
 		"@checkoutButtonPay": {
 			"description": "text for button to pay"
+		},
+		"globalErrorMessage": "Ups, something went wrong",
+		"@globalErrorMessage": {
+			"description": "text to describe a global error message"
 		}
 }

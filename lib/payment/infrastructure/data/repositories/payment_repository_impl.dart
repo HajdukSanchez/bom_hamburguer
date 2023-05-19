@@ -5,9 +5,9 @@ import 'package:dartz/dartz.dart';
 /// Implementation of the abstract repository class [PaymentRepository]
 class PaymentRepositoryImpl implements PaymentRepository {
   /// Constructor
-  PaymentRepositoryImpl();
+  PaymentRepositoryImpl(this._remoteService);
 
-  final _remoteService = PaymentRemoteServiceImpl();
+  final PaymentRemoteService _remoteService;
 
   @override
   Future<Either<Exception, bool>> makePayment() async {

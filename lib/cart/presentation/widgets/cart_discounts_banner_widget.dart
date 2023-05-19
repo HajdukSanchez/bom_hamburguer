@@ -1,3 +1,4 @@
+import 'package:bom_hamburguer/cart/cart.dart';
 import 'package:bom_hamburguer/common/common.dart';
 import 'package:bom_hamburguer/home/home.dart';
 import 'package:bom_hamburguer/l10n/l10n.dart';
@@ -26,6 +27,10 @@ class CartDiscountsBannerWidget extends StatelessWidget {
             /// Validate if there is some available discount
             if (data.areDiscountsAvailable(products)) {
               final discount = data.getDiscountRule(products);
+              // Set discount to cart
+              context.read<CartBloc>().add(
+                    CartEvent.addDiscount(discount: discount),
+                  );
 
               return Container(
                 margin: const EdgeInsets.only(bottom: 10),
