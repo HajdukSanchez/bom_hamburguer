@@ -35,5 +35,25 @@
 		"cartDiscountText2": "\nObtienes un descuento del ",
 		"@cartDiscountText2": {
 			"description": "Texto final para mostrar en el mensaje de descuento"
+		},
+		"cartEmpty": "Empecemos a comprar!",
+		"@cartEmpty": {
+			"description": "Texto para mostrar cuando el carrito está vacío"
+		},
+		"textFieldName": "Nombre",
+		"@textFieldName": {
+			"description": "Placeholder para el campo de nombre"
+		},
+		"checkoutPay": "Pagar",
+		"@checkoutPay": {
+			"description": "texto indicando que se va a pagar"
+		},
+		"checkoutPersonalData": "Información personal",
+		"@checkoutPersonalData": {
+			"description": "Texto para indicar que se va a ingresar información personal"
+		},
+		"checkoutButtonPay": "Realizar pago",
+		"@checkoutButtonPay": {
+			"description": "Texto para el botón de realizar pago"
 		}
 }

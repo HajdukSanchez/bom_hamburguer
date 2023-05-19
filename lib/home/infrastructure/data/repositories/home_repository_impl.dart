@@ -9,12 +9,12 @@ class HomeRepositoryImpl implements HomeRepository {
 
   /// Get instance
   // TODO: Add dependency injection
-  final _homeLocalService = HomeLocalServiceImpl();
+  final _localService = HomeLocalServiceImpl();
 
   @override
   Future<Either<Exception, Catalog>> getCatalog() async {
     try {
-      final result = await _homeLocalService.getLocalCatalog();
+      final result = await _localService.getLocalCatalog();
 
       return Right(result.toDomain());
     } on CommonStorageFailure catch (e) {

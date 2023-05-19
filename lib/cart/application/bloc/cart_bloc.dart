@@ -15,6 +15,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       (event, emit) {
         event.when(
           add: (product) => _addNewProduct(event, emit, product: product),
+          remove: (product) => _deleteProduct(event, emit, product: product),
         );
       },
     );
@@ -39,5 +40,18 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       cart = cart.copyWith(products: [...cart.products, product]);
       emit(CartState.cart(cart: cart, isError: false));
     }
+  }
+
+  // Delete existing product from cart
+  Future<void> _deleteProduct(
+    CartEvent event,
+    Emitter<CartState> emit, {
+    required Product product,
+  }) async {
+    final newProducts =
+        cart.products.where((element) => element.id != product.id).toList();
+
+    cart = cart.copyWith(products: newProducts);
+    emit(CartState.cart(cart: cart, isError: false));
   }
 }

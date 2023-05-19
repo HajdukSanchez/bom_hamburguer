@@ -35,5 +35,25 @@
 		"cartDiscountText2": "\nYou have a discount of ",
 		"@cartDiscountText2": {
 			"description": "Final text to show in the discount message"
+		},
+		"cartEmpty": "Let's start shopping?",
+		"@cartEmpty": {
+			"description": "Text to show when the cart is empty"
+		},
+		"textFieldName": "Name",
+		"@textFieldName": {
+			"description": "Placeholder text for the name text field"
+		},
+		"checkoutPay": "Pay",
+		"@checkoutPay": {
+			"description": "Text to indicates the user to pay"
+		},
+		"checkoutPersonalData": "Personal information",
+		"@checkoutPersonalData": {
+			"description": "Text title to indicates a section with personal data"
+		},
+		"checkoutButtonPay": "Pay",
+		"@checkoutButtonPay": {
+			"description": "text for button to pay"
 		}
 }

@@ -20,13 +20,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     );
   }
   // TODO: ADD dependency Injection
-  final _homeRepository = HomeRepositoryImpl();
+  final _useCase = GetHomeCatalogUseCase();
 
   // Get initial catalog data
   Future<void> _getCatalog(HomeEvent event, Emitter<HomeState> emit) async {
     emit(const HomeState.loading());
 
-    final result = await _homeRepository.getCatalog();
+    final result = await _useCase.execute();
     emit(
       result.fold(
         HomeState.error,
