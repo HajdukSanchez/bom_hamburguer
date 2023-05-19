@@ -1,3 +1,4 @@
+export 'package:bom_hamburguer/common/application/providers/providers.dart';
 export 'package:bom_hamburguer/common/domain/entities/discount_rule.dart';
 export 'package:bom_hamburguer/common/domain/entities/product.dart';
 export 'package:bom_hamburguer/common/domain/entities/user.dart';

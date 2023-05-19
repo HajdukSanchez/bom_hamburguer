@@ -17,4 +17,28 @@ class Catalog with _$Catalog {
 
   /// Empty constructor
   const Catalog._();
+
+  /// Validate if there is main products
+  bool get areMainProductsAvailable {
+    return products.any((product) => product.type == ProductType.main);
+  }
+
+  /// Validate if there is some extra products
+  bool get areAdditionProductsAvailable {
+    return products.any((product) => product.type == ProductType.addition);
+  }
+
+  /// Get a list of the main products
+  List<Product> get mainProducts {
+    return products
+        .where((product) => product.type == ProductType.main)
+        .toList();
+  }
+
+  /// Get a list with the addition products
+  List<Product> get additionProducts {
+    return products
+        .where((product) => product.type == ProductType.addition)
+        .toList();
+  }
 }

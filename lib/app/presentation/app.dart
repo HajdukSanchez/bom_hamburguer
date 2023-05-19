@@ -1,3 +1,4 @@
+import 'package:bom_hamburguer/common/common.dart';
 import 'package:bom_hamburguer/home/home.dart';
 import 'package:bom_hamburguer/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomeApp(),
+      home: const CommonProvider(child: HomeApp()),
     );
   }
 }

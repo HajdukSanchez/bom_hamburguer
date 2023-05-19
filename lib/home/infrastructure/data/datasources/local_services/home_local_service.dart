@@ -24,6 +24,14 @@ class HomeLocalServiceImpl implements HomeLocalService {
             'https://www.b2b.212global.com/web/image/product.product/210486/image_512?unique=ead0fb2',
         type: ProductType.main,
       );
+      const product2 = ProductDTO(
+        id: 1,
+        name: 'Termo',
+        price: 10,
+        image:
+            'https://www.b2b.212global.com/web/image/product.product/210486/image_512?unique=ead0fb2',
+        type: ProductType.addition,
+      );
 
       /// Simulate API call
       return Future.delayed(
@@ -32,10 +40,10 @@ class HomeLocalServiceImpl implements HomeLocalService {
           products: [
             product,
             product,
+            product2,
             product,
             product,
-            product,
-            product,
+            product2,
           ],
           discounts: [
             DiscountRuleDTO(products: [product], discount: 15)

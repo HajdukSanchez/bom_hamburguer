@@ -3,5 +3,21 @@
     "homeAppBarTitle": "Bom Hamburguer",
     "@homeAppBarTitle": {
         "description": "Texto mostrado en la AppBar de la página del Home"
-    }
+    },
+		"homeListMainProductsTitle": "Nuestros Sandwiches",
+    "@homeListMainProductsTitle": {
+        "description": "Texto para mostrar como título cuando se listan los productos principales"
+    },
+		"homeListAdditionProductsTitle": "Agrega a tu Sandwich",
+    "@homeListAdditionProductsTitle": {
+        "description": "Texto para mostrar como título cuando se listan los productos adicionales"
+    },
+		"homeNoMainProducts": "Ups, no hay productos para mostrar",
+		"@homeNoMainProducts": {
+			"description": "Texto para mostrar cuando no hay productos principales"
+		},
+		"cartProductAlreadyAdded": "Ups, el producto ya está en el carrito",
+		"@cartProductAlreadyAdded": {
+			"description": "Texto para mostrar cuando se intenta agregar un producto que ya está en el carrito"
+		}
 }

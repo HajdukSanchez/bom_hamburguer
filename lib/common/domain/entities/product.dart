@@ -26,4 +26,7 @@ class Product with _$Product {
 
   /// Empty constructor
   const Product._();
+
+  /// Formatted price of the product with $100.00 format
+  String get formattedPrice => '\$$price';
 }

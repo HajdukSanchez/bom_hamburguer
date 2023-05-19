@@ -9,30 +9,12 @@ class HomeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Navigate to cart page
-    Future<void> showCart() async {
-      // await Navigator.of(context).push<void>(
-      //   MaterialPageRoute<void>(
-      //     builder: (BuildContext context) => const TODO,
-      //   ),
-      // );
-    }
-
     return Scaffold(
       appBar: AppBar(title: Text(context.l10n.homeAppBarTitle)),
-      body: const HomeProvider(
-        child: Center(
-          child: CatalogListWidget(),
-        ),
+      body: const Center(
+        child: CatalogListWidget(),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: showCart,
-        heroTag: 1,
-        child: const Icon(
-          Icons.shopping_cart,
-          color: Colors.white,
-        ),
-      ),
+      floatingActionButton: const CartButtonWidget(),
     );
   }
 }

@@ -3,5 +3,21 @@
     "homeAppBarTitle": "Bom Hamburguer",
     "@homeAppBarTitle": {
         "description": "Text shown in the AppBar of the Home Page"
-    }
+    },
+		"homeListMainProductsTitle": "Our Sandwiches",
+    "@homeListMainProductsTitle": {
+        "description": "Text shown as a title when listing the main products"
+    },
+		"homeListAdditionProductsTitle": "Add to your sandwich",
+    "@homeListAdditionProductsTitle": {
+        "description": "Text shown as a title when listing the additional products"
+    },
+		"homeNoMainProducts": "Ups, there is nothing to show you",
+		"@homeNoMainProducts": {
+			"description": "Text shown when there are no main products to show"
+		},
+		"cartProductAlreadyAdded": "Ups, the product is already in the cart",
+		"@cartProductAlreadyAdded": {
+			"description": "Text shown when user tries to add a product that is already in the cart"
+		}
 }
